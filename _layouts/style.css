@@ -207,6 +207,15 @@ label {
 	margin-bottom: 5px;
 }
 
+#name, #email, #phone (
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+)
+
 input,
 textarea {
 	width: 100%;
