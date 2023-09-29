@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
 /* Reset Styles */
 
 body {
     background: scroll;
-       margin: 0;
+    margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
+    font-family: 'Muli', sans-serif;
     color: #505050;
 }
 
