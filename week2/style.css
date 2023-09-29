@@ -63,6 +63,10 @@ nav a:hover {
     background-color: #505050;  /* Darker shade for hover */
 }
 
+.highlighted {
+    background-color: #505050;
+}
+
 /* Banner Styles */
 .banner-container {
     display: flex;
