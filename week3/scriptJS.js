@@ -14,24 +14,26 @@ function currentSlide(n) {
 
 function showSlides(n) {
 
-    if (slideIndex==9) {
+    let slides = document.getElementsByClassName("mySlides");
+    let numSlides = slides.length;
+
+    if (slideIndex>numSlides) {     // slider resets to first
         slideIndex=1;
     }
-    else if (slideIndex==0) {
-        slideIndex=8;
+    else if (slideIndex<1) {        // slider resets to last
+        slideIndex=numSlides;
     }
 
-    let newName = "image" + slideIndex;
-    let oldName = "image" + oldSlide;
-    let getSlide = document.getElementById(newName);
-    let getOldSlide = document.getElementById(oldName);
+    for (let i=1; i<=numSlides; i++) {
 
-    getSlide.style.display = "block";
-    getOldSlide.style.display = "none";
+        let getSlide = document.getElementById("image" + i);   //id name changes based on slideIndex
 
-    //let i;
+        if (i==slideIndex) { getSlide.style.display = "block";}
 
-    //let slides = document.getElementsByClassName("mySlides");
-    //let getImage = getSlide.getElementsByClassName(slideshow-img);
+        else {getSlide.style.display = "none";}
+    }
+
+    
+
 }
 
