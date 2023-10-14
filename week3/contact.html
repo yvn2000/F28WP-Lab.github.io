@@ -5,32 +5,6 @@
   <title>Contact Us - Wanderlust Voyages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <style>
-	   label {
-		display: block;
-		margin-bottom: 5px;
-	}
-
-	input,
-	textarea {
-		width: 100%;
-		padding: 10px;
-		margin-bottom: 20px;
-		border: 2px solid #ccc;
-		border-radius: 4px;
-		resize: vertical;
-	}
-
-	input[type="submit"] {
-		background-color: #333;
-		color: #fff;
-		cursor: pointer;
-	}
-
-	input[type="submit"]:hover {
-		background-color: #555;
-	}
-  </style>
   
 </head>
 <body>
@@ -52,21 +26,44 @@
   <main class="services">
     <h1>Contact Us</h1>
 		
-		<form method="post" action="#">
-			<label for="name">Name:</label>
-			<input type="text" id="name" name="name" required>
+		<form name="form" id="form" action="contact.html" style="margin: 5vh auto 5vh auto;">
+      <div class="input-control">
+          
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username">
+          <div class="error"></div><br>
+    
+      </div>
+          
+      <div class="input-control">
 
-			<label for="email">Email:</label>
-			<input type="email" id="email" name="email" required>
+        <label for="email">E-Mail:</label>
+        <input type="text" id="email" name="email">
+        <div class="error" id="errorEM"></div><br>
 
-			<label for="phone">Phone:</label>
-			<input type="tel" id="phone" name="phone">
+      </div>
 
-			<label for="message">Message:</label>
-			<textarea id="message" name="message" rows="5" required></textarea>
+      <div class="input-control">
 
-			<input type="submit" value="Send">
-		</form>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password">
+          <div class="error" id="errorPASS"></div><br>
+
+      </div>
+
+      <div class="input-control"> 
+
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword">
+          <div class="error" id="errorCPASS"></div><br>
+
+      </div>
+
+      <button type="submit" value="Submit" id="submitButton">Submit</button>
+      
+  </form>
+
+
 		 <p>You can also reach us at:</p>
     <ul>
       <li>Phone: 123-456-7890</li>
@@ -84,5 +81,6 @@
     <p >&copy; 2024 Wanderlust Voyages | Travel Agency. All rights reserved.</p>
   </footer>
   </div>
+  <script src="scriptJS.js"></script>
 </body>
 </html>
