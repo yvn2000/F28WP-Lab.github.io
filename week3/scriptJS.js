@@ -2,11 +2,11 @@
 //Slide Show
 
 var slideIndex = 1;
-var oldSlide;
+//var oldSlide;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-    oldSlide = slideIndex;
+    //oldSlide = slideIndex;
     showSlides(slideIndex += n);
 }
 
