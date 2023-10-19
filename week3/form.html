@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form - Wanderlust Voyages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+ <div>
+  <header>
+    <h1 class="headeraH1">Wanderlust Voyages | Travel Agency</h1>
+	</header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tasks.html">Tasks</a></li>
+    </ul>
+    </nav>
+  
+  <main class="services">
+    <h1>Form</h1>
+		
+		<form name="form" id="form" action="contact.html" style="margin: 5vh auto 5vh auto;">
+      <div class="input-control">
+          
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username">
+          <div class="error"></div><br>
+    
+      </div>
+          
+      <div class="input-control">
+
+        <label for="email">E-Mail:</label>
+        <input type="text" id="email" name="email">
+        <div class="error" id="errorEM"></div><br>
+
+      </div>
+
+      <div class="input-control">
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password">
+          <div class="error" id="errorPASS"></div><br>
+
+      </div>
+
+      <div class="input-control"> 
+
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword">
+          <div class="error" id="errorCPASS"></div><br>
+
+      </div>
+
+      <button type="submit" value="Submit" id="submitButton">Submit</button>
+      
+  </form>
+
+
+		 <p>You can also reach us at:</p>
+    <ul>
+      <li>Phone: 123-456-7890</li>
+      <li>Email: info@myservice.com</li>
+      <li>Address: 123 Main St, Knowledge Park Dubai - UAE</li>
+    </ul>
+
+  </main>
+  <footer>
+      <ul>
+        <li><a href="https://www.facebook.com/">Facebook</a></li>
+        <li><a href="https://twitter.com/">Twitter</a></li>
+        <li ><a href="https://www.instagram.com/">Instagram</a></li>
+      </ul>
+    <p >&copy; 2024 Wanderlust Voyages | Travel Agency. All rights reserved.</p>
+  </footer>
+  </div>
+  <script src="scriptJS.js"></script>
+</body>
+</html>

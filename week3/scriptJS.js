@@ -38,6 +38,19 @@ function showSlides(n) {
 }
 
 // Form
+/*
+Everything works on the dependancy of event listener. The function responsible
+for the form is first ran when event page load occurs. There are two error
+classes :- one for success and one for error. If the value inputed in the box
+by the user is valid, success class is added to classList, which makes the box
+border green. If not, error class is added and the box border becomes red with
+the proper error message displayed below the box. A for loop is ran which checks
+the validity of all boxes everytime the user focuses on either of the boxes
+through the use of the blur event listener. Each form box has its own unique
+method of verifiication checking for name, email, password. If all values inputed
+in the boxes are valid, i.e. all boxes are green, the user is able to submit the
+form. Else, if one or more boxes are invalid, submit button will do nothing.
+*/
 
     const form = document.getElementById('form');
     const username = document.getElementById('username');
