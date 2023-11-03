@@ -11,7 +11,7 @@ btn.addEventListener("click", function() {
     var ourRequest = new XMLHttpRequest();
     
     ourRequest.open('GET', 
-    'https://api.openweathermap.org/data/2.5/weather?q=' +city.value+ '&appid=16f0bec95d207a891c1faef6b39f6cd2');
+    'https://api.openweathermap.org/data/2.5/weather?q=' +city.value+ '&appid=e74a752c81684094463e38f68e07d288');
     
     /*ourRequest.open('GET', 
     'test.json');*/
