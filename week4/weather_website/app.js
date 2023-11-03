@@ -10,7 +10,7 @@ btn.addEventListener("click", function() {
 
     if (city.value=='') {
         alert("Please Enter City Name");
-        
+        return;
     }
 
     var ourRequest = new XMLHttpRequest();
@@ -18,14 +18,11 @@ btn.addEventListener("click", function() {
     ourRequest.open('GET', 
     'https://api.openweathermap.org/data/2.5/weather?q=' +city.value+ '&appid=e74a752c81684094463e38f68e07d288');
     
-    //ourRequest.open('GET', 'test.json');
     ourRequest.onload = function() {
-        //console.log(ourRequest.responseText);
 
         var ourData = JSON.parse(ourRequest.responseText);
 
         renderHTML(ourData);
-        //btn.classList.add("hide-me");
     };
     ourRequest.send();
 
@@ -40,7 +37,7 @@ function renderHTML(data){
         ". <p>The temperature is " + data.main.temp + " degrees with a wind speed of "
         + data.wind.speed + "m/s.";
     
-    htmlString += '.</p>';
+    htmlString += '.<hr></p>';
 
     weatherContainer.insertAdjacentHTML('beforeend' , htmlString);
     
