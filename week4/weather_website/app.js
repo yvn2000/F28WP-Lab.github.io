@@ -18,6 +18,10 @@ btn.addEventListener("click", function() {
     ourRequest.open('GET', 
     'https://api.openweathermap.org/data/2.5/weather?q=' +city.value+ '&appid=e74a752c81684094463e38f68e07d288');
     
+    ourRequest.onerror = function() {
+        alert("Request Failed");
+    }
+
     ourRequest.onload = function() {
 
         var ourData = JSON.parse(ourRequest.responseText);
