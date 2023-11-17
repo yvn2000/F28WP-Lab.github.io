@@ -24,15 +24,23 @@ exports.register = (req, res) => {
 
     const {name, email, password, passwordConfirm} = req.body;     //middleware body parser
 
+    if (name=='' || email=='' || password=='' || passwordConfirm=='') {
+        return res.render('register', { //stop render
+            message: 'Fill all details please'
+        })
+
+    }
+
+
     db.query('SELECT email FROM users WHERE email = ?', [email], async (error, result)=> {
 
         if (error) {
             console.log(error);
         }
-        if (result.length > 0) {
-            return res.render('register'), { //stop render
+        else if (result.length > 0) {
+            return res.render('register', { //stop render
                 message: 'This email is already in use...'
-            }
+            })
         }
         else if (password !== passwordConfirm){
             return res.render('register', { //stop render
@@ -40,7 +48,7 @@ exports.register = (req, res) => {
             })
         }
 
-        //await used because hasing takes time, 8 is the number of rounds/times password is hashed
+        //await used because hashing takes time, 8 is the number of rounds/times password is hashed
         let hashedPassword = await bcrypt.hash(password, 8);
         console.log(hashedPassword);
 
@@ -50,10 +58,17 @@ exports.register = (req, res) => {
             }
             else {
                 console.log(results);
+                /*
                 return res.render('register', {
                     message: 'User registered'
+                });*/
+                return res.render('profile', {
+                    username: name,
+                    signed: true
                 });
             }
+
+            //res.render("profile");
 
         
          })
@@ -62,8 +77,61 @@ exports.register = (req, res) => {
     });
 
 
-    res.send("form submitted");
+    //res.send("form submitted");
 }
+
+exports.login = (req, res) => {
+    console.log(req.body);
+
+    const {email, password} = req.body;     //middleware body parser
+
+    if (email=='' || password=='') {
+        return res.render('login', { //stop render
+            message: 'Fill all details please'
+        })
+
+    }
+
+    db.query('SELECT * FROM users WHERE email = ?', [email], async (error, result)=> {
+
+        console.log(result);
+        const foundName = result[0].name;
+        console.log(foundName);
+
+        if (error) {
+            console.log(error);
+        }
+        else if (result.length > 0) {
+            return res.render('profile', {
+                username: foundName,
+                signed: true
+            })
+        }
+
+        else if (result.length == 0) {
+            return res.render('login', {
+                message: 'Incorrect email and password'
+            })
+        }
+
+    });
+
+
+    //res.send("form submitted");
+}
+
+exports.logout = (req, res) => {
+    console.log(req.body);
+
+    res.render("index");
+
+    
+
+    //res.send("form submitted");
+}
+
+
+
 
 
 

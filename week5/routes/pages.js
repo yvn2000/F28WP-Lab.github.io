@@ -6,7 +6,7 @@ const router  = express.Router();
 
 router.get ("/", (req, res) => {
     //res.send("<h1>HOME PAGE</h1>")
-    res.render("index")           //load profile.hbs, no need for.hbs
+    res.render("index")           
 
 });
 
@@ -16,7 +16,12 @@ router.get ("/profile", (req, res) => {
 });
 
 router.get ("/register", (req, res) => {
-    res.render("register")           //load profile.hbs, no need for.hbs
+    res.render("register")           
+
+});
+
+router.get ("/login", (req, res) => {
+    res.render("login")           
 
 });
 
