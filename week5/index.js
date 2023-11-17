@@ -7,6 +7,7 @@ const port = 5000;
 
 //const dotenv = require('require');
 dotenv.config({path: './.env'})
+const path = require('path');
 
 
 const db = mysql.createConnection({
@@ -30,12 +31,19 @@ db.connect((error)=>{
     }
 });
 
+//to ensure that it takes css and js files from public folder directory
+const publicDirectory = path.join(__dirname, './public');
+app.use(express.static(publicDirectory));
+
+app.set('view engine', 'hbs');
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
-app.get ("/", (req, res) => {
-    res.send("<h1>HOME PAGE</h1>")
+//Define routes
+app.use('/', require('./routes/pages'));
 
-});
+app.use('/auth', require('./routes/auth'));
 
 
 
