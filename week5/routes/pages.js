@@ -1,18 +1,24 @@
 const express = require('express');
 const router  = express.Router();
 
+authController = require('../controllers/auth');
+
+
+router.use(authController.isLoggedIn);
 
 //ROUTES
 
 router.get ("/", (req, res) => {
-    //res.send("<h1>HOME PAGE</h1>")
-    res.render("index")           
+    res.render("index", {
+        user: req.user
+    });
 
 });
 
 router.get ("/profile", (req, res) => {
-    res.render("profile")           //load profile.hbs, no need for.hbs
-
+    res.render("profile", {
+        user: req.user
+    })           //load profile.hbs, no need for.hbs
 });
 
 router.get ("/register", (req, res) => {

@@ -2,12 +2,14 @@ const express = require('express');
 const mysql = require('mysql');
 const dotenv = require('dotenv');
 
+const cookieParser = require('cookie-parser');
+
 const app = express();
 const port = 5000;
 
 //const dotenv = require('require');
-dotenv.config({path: './.env'})
 const path = require('path');
+dotenv.config({path: './.env'})
 
 
 const db = mysql.createConnection({
@@ -34,6 +36,10 @@ db.connect((error)=>{
 //to ensure that it takes css and js files from public folder directory
 const publicDirectory = path.join(__dirname, './public');
 app.use(express.static(publicDirectory));
+
+
+app.use(cookieParser());
+
 
 app.set('view engine', 'hbs');
 app.use(express.json());
