@@ -38,9 +38,17 @@ T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="a
                         Home
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Home</h5>
-                        <p class="card-text">Home</p>
-                        <a href="#" class="btn btn-primary">Go Somewhere</a>
+                        <h5 class="card-title">User Authentication Project</h5>
+                        <p class="card-text">
+                            This is a user authentication system, where users can sign up, log in, and log out.
+                            After logging in, usres will be directed to their profile page.
+                        </p>
+                        {{#if user}}
+                        <a href="/profile" class="btn btn-primary">View your Profile</a>
+                        {{else}}
+                        <a href="/login" class="btn btn-primary">Log In</a>
+                        {{/if}}
+                        <!--<a href="#" class="btn btn-primary">View your Profile</a>-->
                     </div>
                     <div class="card-footer text-muted">
                         Node MySQL - Project
