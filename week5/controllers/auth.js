@@ -63,7 +63,7 @@ exports.register = (req, res) => {
                 return res.render('register', {
                     message: 'User registered'
                 });*/
-                return res.render('profile', {
+                return res.render('index', {
                     username: name,
                     signed: true
                 });
